@@ -13,6 +13,10 @@ class RoutePlanner {
     // Add public variables or methods declarations here.
     float GetDistance() { return distance; }
     void AStarSearch(void);
+    float CalculateHValue(const RouteModel::Node *node);
+    void AddNeighbors(RouteModel::Node *current_node);
+    std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *current_node);
+    RouteModel::Node *NextNode();
 
   private:
     // Add private variables or methods declarations here.
@@ -21,10 +25,7 @@ class RoutePlanner {
     float distance;
     std::vector<RouteModel::Node*> open_list;
 
-    std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *current_node);
-    float CalculateHValue(const RouteModel::Node *node);
-    RouteModel::Node *NextNode();
-    void AddNeighbors(RouteModel::Node *current_node);
+    
 };
 
 #endif

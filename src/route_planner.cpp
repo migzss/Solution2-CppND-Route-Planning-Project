@@ -12,6 +12,7 @@ RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, floa
 
 }
 
+
 std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
     
     // Create path_found vector
@@ -31,6 +32,7 @@ std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node 
 
     return path_found;
 }
+
 
 void RoutePlanner::AStarSearch(void) {
     start_node->visited = true;
